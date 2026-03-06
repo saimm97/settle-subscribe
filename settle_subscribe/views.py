@@ -15,13 +15,14 @@ def login_page(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        print(password)
-        user = authenticate(username=email,password=password)
+        print(email)
+        user = authenticate(request,username=email,password=password)
         print(user)
         if user is not None:
+            print("hello")
             login(request,user)
             print('correct password')
-            return redirect('/sign_in/')
+            return redirect('/dashboard')
         elif user is None: 
             print('wrong password')
             messages.error(request, "Invalid Password")
@@ -72,17 +73,41 @@ def signup(request):
                 email=email
             )
             user.set_password(password)
-            user.save
+            user.save()
             messages.info(request, "Account created Successfully!")
             return redirect('/sign_up/')
         else:
             messages.info(request, "Account not created. Passwords don't match")
-
     
     return render(request, 'signup.html')
 
 
-
 def dashboard(request):
+    if request.user.is_authenticated:
+        print("user_logged in: ", request.user.id)
+        total_subscriptions = UserExpenses.objects.filter(user_id=request.user.id).count()
+        upcoming_subscriptions = UserSubscriptions.objects.filter(user_id=request.user.id)
 
-    return render(request, 'dashboard.html')
+        print("User Expenses: ",total_subscriptions)
+        print("upcoming_subscriptions: ",upcoming_subscriptions.select_related('subscriptions','user'))
+
+        return render(request, 'dashboard.html',{'total_subscriptions': total_subscriptions, 'upcoming_subscriptions': upcoming_subscriptions})
+    #     total_subscriptions =
+    #     owed_subscriptions =
+    #     active_groups =
+        # if request.method == 'POST':
+    else:
+        messages.error(request, "You need to login Before Viewing Dashboard.") 
+        return redirect("login")
+
+def subscription(request):
+    if request.user.is_authenticated:
+        print("user_logged in: ", request.user.id)
+        all_subscriptions = UserSubscriptions.objects.filter(user_id=request.user.id)
+
+        print("upcoming_subscriptions: ",all_subscriptions.select_related('subscriptions','user'))
+        return render(request, 'subscription.html',{'all_subscriptions': all_subscriptions})
+
+    else:
+        messages.error(request, "You need to login Before Viewing Dashboard.") 
+        return redirect("login")

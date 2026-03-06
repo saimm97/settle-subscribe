@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="flex h-screen bg-gray-50">
+  {% include 'vertical_navbar.html' %}
+  <main class="flex-1 overflow-auto">
+    <div
+      class="p-8"
+      data-fg-ycf0="1.19:1.13238:/src/app/pages/Subscriptions.tsx:95:5:3956:9274:e:div:xtetxtetx:1"
+    >
+      <div
+        class="mb-8"
+        data-fg-ycf2="1.19:1.13238:/src/app/pages/Subscriptions.tsx:97:7:4005:5869:e:div:etxtetxte"
+      >
+        <div
+          class="flex items-center justify-between mb-6"
+          data-fg-ycf3="1.19:1.13238:/src/app/pages/Subscriptions.tsx:98:9:4036:4488:e:div:ete"
+        >
+          <div
+            data-fg-ycf4="1.19:1.13238:/src/app/pages/Subscriptions.tsx:99:11:4103:192:e:div:ete"
+          >
+            <h1
+              class="text-3xl font-bold text-gray-900"
+              data-fg-ycf5="1.19:1.13238:/src/app/pages/Subscriptions.tsx:100:13:4121:67:e:h1:t"
+            >
+              Subscriptions
+            </h1>
+            <p
+              class="text-gray-500 mt-1"
+              data-fg-ycf7="1.19:1.13238:/src/app/pages/Subscriptions.tsx:101:13:4201:77:e:p:t"
+            >
+              Manage all your recurring subscriptions
+            </p>
+          </div>
+          <button
+            data-slot="dialog-trigger"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground h-9 px-4 py-2 has-[&gt;svg]:px-3 bg-indigo-600 hover:bg-indigo-700"
+            data-fg-ycf11="1.19:1.13238:/src/app/pages/Subscriptions.tsx:105:15:4418:161:e:Button:et::::s:BNeg:1"
+            type="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="radix-:r1t:"
+            data-state="closed"
+            data-fg-ycf10="1.19:1.13238:/src/app/pages/Subscriptions.tsx:104:13:4380:228:e:DialogTrigger:e::::s:EB9e:1"
+            data-fg-mmg1="0.26:0.3828:/src/app/components/ui/dialog.tsx:18:10:433:65:e:DialogPrimitive.Trigger::1"
+            data-fg-csem0="0.17:0.2106:/src/app/components/ui/button.tsx:50:5:1941:121:e:Comp::1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-plus w-4 h-4 mr-2"
+              data-fg-ycf12="1.19:1.13238:/src/app/pages/Subscriptions.tsx:106:17:4489:33:e:Plus::::::ISW"
+            >
+              <path d="M5 12h14"></path>
+              <path d="M12 5v14"></path>
+            </svg>
+            Add Subscription
+          </button>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+          data-fg-ycf64="1.19:1.13238:/src/app/pages/Subscriptions.tsx:200:9:8564:914:e:div:etete"
+        >
+          <div
+            data-slot="card"
+            class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border border-gray-200 "
+            data-fg-ycf65="1.19:1.13238:/src/app/pages/Subscriptions.tsx:201:11:8635:266:e:Card:e::::s:CuJ6:1"
+            data-fg-elfm0="0.19:0.1988:/src/app/components/ui/card.tsx:7:5:149:178:e:div::1"
+          >
+            <div
+              data-slot="card-content"
+              class="px-6 [&amp;:last-child]:pb-6 pt-6"
+              data-fg-ycf66="1.19:1.13238:/src/app/pages/Subscriptions.tsx:202:13:8654:229:e:CardContent:ete::::s:BJcl:1"
+              data-fg-elfm5="0.19:0.1988:/src/app/components/ui/card.tsx:66:5:1513:119:e:div::1"
+            >
+              <p
+                class="text-sm text-gray-500"
+                data-fg-ycf67="1.19:1.13238:/src/app/pages/Subscriptions.tsx:203:15:8699:59:e:p:t"
+              >
+                Total Monthly Cost
+              </p>
+              <p
+                class="text-2xl font-bold text-gray-900 mt-1"
+                data-fg-ycf69="1.19:1.13238:/src/app/pages/Subscriptions.tsx:204:15:8773:83:e:p:tx"
+              >
+                $331.94
+              </p>
+            </div>
+          </div>
+          <div
+            data-slot="card"
+            class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border border-gray-200"
+            data-fg-ycf72="1.19:1.13238:/src/app/pages/Subscriptions.tsx:207:11:8912:276:e:Card:e::::s:CuJ6:1"
+            data-fg-elfm0="0.19:0.1988:/src/app/components/ui/card.tsx:7:5:149:178:e:div::1"
+          >
+            <div
+              data-slot="card-content"
+              class="px-6 [&amp;:last-child]:pb-6 pt-6"
+              data-fg-ycf73="1.19:1.13238:/src/app/pages/Subscriptions.tsx:208:13:8931:239:e:CardContent:ete::::s:BJcl:1"
+              data-fg-elfm5="0.19:0.1988:/src/app/components/ui/card.tsx:66:5:1513:119:e:div::1"
+            >
+              <p
+                class="text-sm text-gray-500"
+                data-fg-ycf74="1.19:1.13238:/src/app/pages/Subscriptions.tsx:209:15:8976:65:e:p:t"
+              >
+                Your Share (After Split)
+              </p>
+              <p
+                class="text-2xl font-bold text-green-600 mt-1"
+                data-fg-ycf76="1.19:1.13238:/src/app/pages/Subscriptions.tsx:210:15:9056:87:e:p:tx"
+              >
+                $153.45
+              </p>
+            </div>
+          </div>
+          <div
+            data-slot="card"
+            class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border border-gray-200"
+            data-fg-ycf79="1.19:1.13238:/src/app/pages/Subscriptions.tsx:213:11:9199:264:e:Card:e::::s:CuJ6:1"
+            data-fg-elfm0="0.19:0.1988:/src/app/components/ui/card.tsx:7:5:149:178:e:div::1"
+          >
+            <div
+              data-slot="card-content"
+              class="px-6 [&amp;:last-child]:pb-6 pt-6"
+              data-fg-ycf80="1.19:1.13238:/src/app/pages/Subscriptions.tsx:214:13:9218:227:e:CardContent:ete::::s:BJcl:1"
+              data-fg-elfm5="0.19:0.1988:/src/app/components/ui/card.tsx:66:5:1513:119:e:div::1"
+            >
+              <p
+                class="text-sm text-gray-500"
+                data-fg-ycf81="1.19:1.13238:/src/app/pages/Subscriptions.tsx:215:15:9263:61:e:p:t"
+              >
+                Active Subscriptions
+              </p>
+              <p
+                class="text-2xl font-bold text-gray-900 mt-1"
+                data-fg-ycf83="1.19:1.13238:/src/app/pages/Subscriptions.tsx:216:15:9339:79:e:p:x"
+              >
+                8
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative"
+          data-fg-ycf86="1.19:1.13238:/src/app/pages/Subscriptions.tsx:222:9:9511:350:e:div:ete"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            data-fg-ycf87="1.19:1.13238:/src/app/pages/Subscriptions.tsx:223:11:9548:95:e:Search::::::B9rK"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        
+
+
+<input data-slot="input" class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border border-gray-200 px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive pl-10" placeholder="Search subscriptions..." value="">
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for subscription in all_subscriptions %}
+          <div
+            data-slot="card"
+            class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow"
+          >
+            <div data-slot="card-content" class="px-6 [&amp;:last-child]:pb-6 pt-6">
+              <div class="flex items-start justify-between mb-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 text-lg">
+                    {{ subscription.subscriptions.name }}
+                  </h3>
+                  <span
+                    class="inline-block px-2 py-1 rounded-full text-xs font-medium mt-2 bg-purple-100 text-purple-700"
+                  >
+                    Subscription
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    data-slot="button"
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-square-pen w-4 h-4 text-gray-500"
+                    >
+                      <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path
+                        d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    data-slot="button"
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-trash2 lucide-trash-2 w-4 h-4 text-red-500"
+                    >
+                      <path d="M3 6h18"></path>
+                      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                      <line x1="10" x2="10" y1="11" y2="17"></line>
+                      <line x1="14" x2="14" y1="11" y2="17"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">Monthly Cost</span>
+                  <span class="font-bold text-gray-900">${{ subscription.amount }}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500 flex items-center gap-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-users w-4 h-4"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Your Share
+                  </span>
+                  <span class="font-bold text-green-600">${{ subscription.amount }}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500 flex items-center gap-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar w-4 h-4"
+                    >
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path>
+                    </svg>
+                    Due  Date
+                  </span>
+                  <span class="text-sm font-medium text-gray-700">
+                    {{ subscription.due_date|date }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+
+  {% comment %}
+  <main class="flex-1 overflow-auto">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+      <p class="text-gray-500 mt-1">February 2026 Overview</p>
+    </div>
+  </main>
+  {% endcomment %}
+</div>
+
+<h1>Hello to new Dashboard</h1>
+{% endblock %}
