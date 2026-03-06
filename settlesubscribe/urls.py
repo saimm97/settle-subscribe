@@ -29,5 +29,7 @@ urlpatterns = [
     path('sign_in/',views.login_page,name='login'),
     path('sign_up/',views.signup, name='signup'),   
     path('dashboard/',views.dashboard,name='dashboard'),
+    path('subscription/',views.subscription,name='subscription'),
+
 
 ]
