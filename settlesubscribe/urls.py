@@ -30,6 +30,6 @@ urlpatterns = [
     path('sign_up/',views.signup, name='signup'),   
     path('dashboard/',views.dashboard,name='dashboard'),
     path('subscription/',views.subscription,name='subscription'),
-
+    # path('hello/<str:my_arg>/', views.hello_world, name='hello_world'),
 
 ]
