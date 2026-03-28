@@ -27,32 +27,8 @@ def login_page(request):
             print('wrong password')
             messages.error(request, "Invalid Password")
             return redirect('/sign_in/')   
-    # now = datetime.datetime.now()
-    # html = 'Welcome to login page' 
-    # return HttpResponse(html)
-    # return render(request, 'login.html')
-    # template = loader.get_template('login.html')
-    # return HttpResponse(template.render())
+  
     return render(request, 'login.html')
-
-
-# def authorize_login(request):
-#     email = request.POST["email"]
-#     password = request.POST["password"]
-#     user = authenticate(request, username=email, password=password)
-#     if user is not None:
-#         login(request, user)
-#         print("user found")
-#         # Redirect to a success page.
-#         ...
-#     else:
-#         print("user not found")
-
-
-# def signup(request):
-#     template = loader.get_template('signup.html')
-#     return HttpResponse(template.render())
-#     return HttpResponse(loader.get_template('register.html').render())
 
 def signup(request):
     if request.method == 'POST':
@@ -61,7 +37,6 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
-        # user = User.objects.get(email=email)
         user = User.objects.filter(email=email)
         if user.exists():
             messages.info(request,"Email Already Exists!")
@@ -92,10 +67,6 @@ def dashboard(request):
         print("upcoming_subscriptions: ",upcoming_subscriptions.select_related('subscriptions','user'))
 
         return render(request, 'dashboard.html',{'total_subscriptions': total_subscriptions, 'upcoming_subscriptions': upcoming_subscriptions})
-    #     total_subscriptions =
-    #     owed_subscriptions =
-    #     active_groups =
-        # if request.method == 'POST':
     else:
         messages.error(request, "You need to login Before Viewing Dashboard.") 
         return redirect("login")
