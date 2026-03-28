@@ -15,43 +15,20 @@ def login_page(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        print(password)
-        user = authenticate(username=email,password=password)
+        print(email)
+        user = authenticate(request,username=email,password=password)
         print(user)
         if user is not None:
+            print("hello")
             login(request,user)
             print('correct password')
-            return redirect('/sign_in/')
+            return redirect('/dashboard')
         elif user is None: 
             print('wrong password')
             messages.error(request, "Invalid Password")
             return redirect('/sign_in/')   
-    # now = datetime.datetime.now()
-    # html = 'Welcome to login page' 
-    # return HttpResponse(html)
-    # return render(request, 'login.html')
-    # template = loader.get_template('login.html')
-    # return HttpResponse(template.render())
+  
     return render(request, 'login.html')
-
-
-# def authorize_login(request):
-#     email = request.POST["email"]
-#     password = request.POST["password"]
-#     user = authenticate(request, username=email, password=password)
-#     if user is not None:
-#         login(request, user)
-#         print("user found")
-#         # Redirect to a success page.
-#         ...
-#     else:
-#         print("user not found")
-
-
-# def signup(request):
-#     template = loader.get_template('signup.html')
-#     return HttpResponse(template.render())
-#     return HttpResponse(loader.get_template('register.html').render())
 
 def signup(request):
     if request.method == 'POST':
@@ -60,7 +37,6 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
-        # user = User.objects.get(email=email)
         user = User.objects.filter(email=email)
         if user.exists():
             messages.info(request,"Email Already Exists!")
@@ -72,17 +48,37 @@ def signup(request):
                 email=email
             )
             user.set_password(password)
-            user.save
+            user.save()
             messages.info(request, "Account created Successfully!")
             return redirect('/sign_up/')
         else:
             messages.info(request, "Account not created. Passwords don't match")
-
     
     return render(request, 'signup.html')
 
 
-
 def dashboard(request):
+    if request.user.is_authenticated:
+        print("user_logged in: ", request.user.id)
+        total_subscriptions = UserExpenses.objects.filter(user_id=request.user.id).count()
+        upcoming_subscriptions = UserSubscriptions.objects.filter(user_id=request.user.id)
 
-    return render(request, 'dashboard.html')
+        print("User Expenses: ",total_subscriptions)
+        print("upcoming_subscriptions: ",upcoming_subscriptions.select_related('subscriptions','user'))
+
+        return render(request, 'dashboard.html',{'total_subscriptions': total_subscriptions, 'upcoming_subscriptions': upcoming_subscriptions})
+    else:
+        messages.error(request, "You need to login Before Viewing Dashboard.") 
+        return redirect("login")
+
+def subscription(request):
+    if request.user.is_authenticated:
+        print("user_logged in: ", request.user.id)
+        all_subscriptions = UserSubscriptions.objects.filter(user_id=request.user.id)
+
+        print("upcoming_subscriptions: ",all_subscriptions.select_related('subscriptions','user'))
+        return render(request, 'subscription.html',{'all_subscriptions': all_subscriptions})
+
+    else:
+        messages.error(request, "You need to login Before Viewing Dashboard.") 
+        return redirect("login")

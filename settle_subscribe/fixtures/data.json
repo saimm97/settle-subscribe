@@ -1,0 +1,522 @@
+[
+  {
+    "model": "settle_subscribe.user",
+    "pk": 1,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": true,
+      "email": "admin@example.com",
+      "first_name": "Admin",
+      "last_name": "User",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:30:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 2,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "alice@example.com",
+      "first_name": "Alice",
+      "last_name": "Khan",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:31:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 3,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "bob@example.com",
+      "first_name": "Bob",
+      "last_name": "Ali",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:32:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 4,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "charlie@example.com",
+      "first_name": "Charlie",
+      "last_name": "Smith",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:33:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 5,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "david@example.com",
+      "first_name": "David",
+      "last_name": "Lee",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:34:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 6,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "emma@example.com",
+      "first_name": "Emma",
+      "last_name": "Brown",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:35:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 7,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "farhan@example.com",
+      "first_name": "Farhan",
+      "last_name": "Ahmed",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:36:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 8,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "gina@example.com",
+      "first_name": "Gina",
+      "last_name": "Wilson",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:37:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 9,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "harry@example.com",
+      "first_name": "Harry",
+      "last_name": "Clark",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:38:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settle_subscribe.user",
+    "pk": 10,
+    "fields": {
+      "password": "!",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "irene@example.com",
+      "first_name": "Irene",
+      "last_name": "Davis",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-27T14:39:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 1,
+    "fields": { "title": "Dinner", "amount": "2000", "participants": "2,3" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 2,
+    "fields": {
+      "title": "Groceries",
+      "amount": "3500",
+      "participants": "2,4,5"
+    }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 3,
+    "fields": { "title": "Fuel", "amount": "1500", "participants": "3" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 4,
+    "fields": { "title": "Movie", "amount": "1200", "participants": "6,7" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 5,
+    "fields": { "title": "Trip", "amount": "8000", "participants": "1,2,3,4" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 6,
+    "fields": {
+      "title": "Electric Bill",
+      "amount": "2500",
+      "participants": "8,9"
+    }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 7,
+    "fields": { "title": "Internet", "amount": "1800", "participants": "5,6" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 8,
+    "fields": { "title": "Shopping", "amount": "4000", "participants": "7,8,9" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 9,
+    "fields": { "title": "Lunch", "amount": "900", "participants": "10" }
+  },
+  {
+    "model": "settle_subscribe.expenses",
+    "pk": 10,
+    "fields": { "title": "Gym Fee", "amount": "2200", "participants": "1,10" }
+  },
+
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 1,
+    "fields": { "name": "Netflix" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 2,
+    "fields": { "name": "Spotify" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 3,
+    "fields": { "name": "YouTube Premium" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 4,
+    "fields": { "name": "Amazon Prime" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 5,
+    "fields": { "name": "Disney+" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 6,
+    "fields": { "name": "Hulu" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 7,
+    "fields": { "name": "HBO Max" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 8,
+    "fields": { "name": "Apple Music" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 9,
+    "fields": { "name": "ChatGPT Plus" }
+  },
+  {
+    "model": "settle_subscribe.subscriptions",
+    "pk": 10,
+    "fields": { "name": "Canva Pro" }
+  },
+
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 1,
+    "fields": {
+      "title": "Dinner",
+      "amount": "1000",
+      "participants": "2,3",
+      "expenses": 1,
+      "user": 2
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 2,
+    "fields": {
+      "title": "Dinner",
+      "amount": "1000",
+      "participants": "2,3",
+      "expenses": 1,
+      "user": 3
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 3,
+    "fields": {
+      "title": "Groceries",
+      "amount": "1200",
+      "participants": "2,4,5",
+      "expenses": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 4,
+    "fields": {
+      "title": "Fuel",
+      "amount": "1500",
+      "participants": "3",
+      "expenses": 3,
+      "user": 3
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 5,
+    "fields": {
+      "title": "Movie",
+      "amount": "600",
+      "participants": "6,7",
+      "expenses": 4,
+      "user": 6
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 6,
+    "fields": {
+      "title": "Trip",
+      "amount": "2000",
+      "participants": "1,2,3,4",
+      "expenses": 5,
+      "user": 1
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 7,
+    "fields": {
+      "title": "Electric Bill",
+      "amount": "1250",
+      "participants": "8,9",
+      "expenses": 6,
+      "user": 8
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 8,
+    "fields": {
+      "title": "Internet",
+      "amount": "900",
+      "participants": "5,6",
+      "expenses": 7,
+      "user": 5
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 9,
+    "fields": {
+      "title": "Shopping",
+      "amount": "1300",
+      "participants": "7,8,9",
+      "expenses": 8,
+      "user": 7
+    }
+  },
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 10,
+    "fields": {
+      "title": "Lunch",
+      "amount": "900",
+      "participants": "10",
+      "expenses": 9,
+      "user": 10
+    }
+  },
+
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 11,
+    "fields": {
+      "title": "Lunch",
+      "amount": "900",
+      "participants": "10",
+      "expenses": 8,
+      "user": 13
+    }
+  },
+
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 10,
+    "fields": {
+      "title": "Lunch",
+      "amount": "900",
+      "participants": "10",
+      "expenses": 7,
+      "user": 13
+    }
+  },
+
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 10,
+    "fields": {
+      "title": "Lunch",
+      "amount": "900",
+      "participants": "10",
+      "expenses": 6,
+      "user": 13
+    }
+  },
+
+  {
+    "model": "settle_subscribe.userexpenses",
+    "pk": 10,
+    "fields": {
+      "title": "Lunch",
+      "amount": "900",
+      "participants": "10",
+      "expenses": 5,
+      "user": 13
+    }
+  },
+
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 1,
+    "fields": { "subscriptions": 1, "user": 2 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 2,
+    "fields": { "subscriptions": 2, "user": 3 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 3,
+    "fields": { "subscriptions": 3, "user": 4 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 4,
+    "fields": { "subscriptions": 4, "user": 5 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 5,
+    "fields": { "subscriptions": 5, "user": 6 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 6,
+    "fields": { "subscriptions": 6, "user": 7 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 7,
+    "fields": { "subscriptions": 7, "user": 8 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 8,
+    "fields": { "subscriptions": 8, "user": 9 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 9,
+    "fields": { "subscriptions": 9, "user": 13 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 10,
+    "fields": { "subscriptions": 10, "user": 13 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 11,
+    "fields": { "subscriptions": 1, "user": 13 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 12,
+    "fields": { "subscriptions": 6, "user": 13 }
+  },
+  {
+    "model": "settle_subscribe.usersubscriptions",
+    "pk": 13,
+    "fields": { "subscriptions": 5, "user": 13 }
+  },
+  {
+     "model": "settle_subscribe.usersubscriptions",
+     "pk": 14,
+     "fields": { "subscriptions": 4, "user": 13 }
+  },
+  {
+     "model": "settle_subscribe.usersubscriptions",
+     "pk": 15,
+     "fields": { "subscriptions": 7, "user": 13 }
+  },
+   {
+     "model": "settle_subscribe.usersubscriptions",
+     "pk": 16,
+     "fields": { "subscriptions": 9, "user": 13 }
+   }
+]
