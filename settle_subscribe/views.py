@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.conf import settings
 from django.contrib import messages
 from settle_subscribe.models import *
@@ -49,7 +49,7 @@ def signup(request):
             )
             user.set_password(password)
             user.save()
-            messages.info(request, "Account created Successfully!")
+            messages.success(request, "Account created Successfully!")
             return redirect('/sign_up/')
         else:
             messages.info(request, "Account not created. Passwords don't match")
@@ -82,3 +82,7 @@ def subscription(request):
     else:
         messages.error(request, "You need to login Before Viewing Dashboard.") 
         return redirect("login")
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'login.html')

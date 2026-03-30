@@ -30,6 +30,6 @@ urlpatterns = [
     path('sign_up/',views.signup, name='signup'),   
     path('dashboard/',views.dashboard,name='dashboard'),
     path('subscription/',views.subscription,name='subscription'),
-
-
+    path('logout/',views.logout_view,name='logout'),
 ]
+
