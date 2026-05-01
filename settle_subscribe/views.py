@@ -10,9 +10,6 @@ from settle_subscribe.models import *
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
 
-# User = settings.AUTH_USER_MODEL
-# Create your views here.
-
 @csrf_exempt
 def login_page(request):
 
@@ -148,29 +145,3 @@ def delete_subscription(request,subscription_id):
 def logout_view(request):
     logout(request)
     return render(request, "login.html")
-
-
-# class UserSubscriptionCreateView(CreateView, Subscriptions):
-#     model = UserSubscriptions
-#     fields = ["subscriptions_id", "amount", "due_date"]
-#     template_name = "user_subscription_create.html"
-
-#     def get(self, request, *args, **kwargs):
-#         # form = self.form_class(initial=self.initial)
-#         all_subscriptions = Subscriptions.objects.all()
-
-#         print("test", Subscriptions.objects.filter(id=1))
-
-#         return render(
-#             request,
-#             self.template_name,
-#             {"fields": self.fields, "all_susbcriptions": all_subscriptions},
-#         )
-
-#     # def post(self, request, *args, **kwargs):
-#     #     # form = self.form_class(request.POST)
-#     #     if form.is_valid():
-#     #         # <process form cleaned data>
-#     #         return HttpResponseRedirect("/success/")
-
-#     #     return render(request, self.template_name, {"form": form})
