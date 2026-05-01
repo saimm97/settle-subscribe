@@ -14,22 +14,42 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from os import name
 from django.contrib import admin
 from django.urls import path
 from settle_subscribe import views
-# from django.contrib.auth.urls import urls
+from django.urls import include, path
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.models import User
+
 # from user import views as user_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     # path('sign_in/', auth_views.LoginView.as_view(template_name="login.html"), name='login'),
-    path('sign_in/',views.login_page,name='login'),
-    path('sign_up/',views.signup, name='signup'),   
-    path('dashboard/',views.dashboard,name='dashboard'),
-    path('subscription/',views.subscription,name='subscription'),
-    path('logout/',views.logout_view,name='logout'),
+    path("sign_in/", views.login_page, name="login"),
+    path("sign_up/", views.signup, name="signup"),
+    path("dashboard/", views.dashboard, name="dashboard"),
+    path(
+        "subscription/",
+        include(
+            [
+                path("", views.subscription, name="subscription"),
+                path(
+                    "create-subscription",
+                    views.create_subscription,
+                    name="create_subscription",
+                ),
+                  path(
+                    "delete-subscription/<int:subscription_id>",
+                    views.delete_subscription,
+                    name="delete-subscription",
+                ),
+                # path('create-user-subscription/',views.UserSubscriptionCreateView.as_view(template_name="user_subscription_create.html"),name='logout')
+            ]
+        ),
+    ),
+    path("logout/", views.logout_view, name="logout"),
+    # path('create-user-subscription/',views.UserSubscriptionCreateView.as_view(template_name="user_subscription_create.html"),name='logout'),
 ]
-

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+  <dh-component>
+  <div class="py-12 backdrop-blur-[5px] transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 hidden"
+       id="modal"
+       data-bs-dismiss="modal">
+    <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
+      <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+        <div class="w-full flex justify-start text-gray-600 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="icon icon-tabler icon-tabler-wallet"
+               width="52"
+               height="52"
+               viewBox="0 0 24 24"
+               stroke-width="1"
+               stroke="currentColor"
+               fill="none"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12" />
+            <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4" />
+          </svg>
+        </div>
+        <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Add Subscription Details</h1>
+        <form action="{% url 'create_subscription' %}" method="POST">
+          {% csrf_token %}
+          <label for="select"
+                 class="text-gray-800 text-sm font-bold leading-tight tracking-norma">Subscription Name</label>
+          <el-select id="subscription_type" name="subscription_type" value="4" class="mt-2 block">
+          <button type="button"
+                  class="grid w-full cursor-default grid-cols-1 rounded-md bg-white py-1.5 pr-2 pl-2 text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+            <el-selectedcontent class="col-start-1 row-start-1 flex items-center gap-3 pr-3 h-9">
+            </el-selectedcontent>
+            <svg viewBox="0 0 16 16"
+                 fill="currentColor"
+                 data-slot="icon"
+                 aria-hidden="true"
+                 class="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+              <path d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <el-options anchor="bottom start" popover class="max-h-56 w-(--button-width) overflow-auto rounded-md bg-white py-1 text-base shadow-lg outline-1 outline-black/5 [--anchor-gap:--spacing(1)] data-leave:transition data-leave:transition-discrete data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm">
+          {% for sub in subscriptions %}
+            <el-option value="{{ sub.id }}" class="group/option relative block cursor-default py-2 pr-9 pl-3 text-gray-900 select-none focus:bg-indigo-600 focus:text-white focus:outline-hidden">
+            <div class="flex items-left">
+              <span class="ml-3 block truncate font-normal group-aria-selected/option:font-semibold">{{ sub.name }}</span>
+            </div>
+            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden">
+              {% comment %} Move SVG to File {% endcomment %}
+              <svg viewBox="0 0 20 20"
+                   fill="currentColor"
+                   data-slot="icon"
+                   aria-hidden="true"
+                   class="size-5">
+                <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+            </span>
+            </el-option>
+          {% endfor %}
+          </el-options>
+          </el-select>
+          <div class="mt-4">
+            <label for="expiry"
+                   class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Due Date</label>
+          </div>
+          <div class="relative mb-5 mt-2">
+            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+              {% comment %} <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <rect x="4" y="5" width="16" height="16" rx="2" />
+              <line x1="16" y1="3" x2="16" y2="7" />
+              <line x1="8" y1="3" x2="8" y2="7" />
+              <line x1="4" y1="11" x2="20" y2="11" />
+              <rect x="8" y="15" width="2" height="2" />
+              </svg> {% endcomment %}
+            </div>
+            <input id="due_date"
+                   name="due_date"
+                   type="date"
+                   class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                   placeholder="MM/YY" />
+          </div>
+          <label for="cvc"
+                 class="text-gray-800 mt-2 text-sm font-bold leading-tight tracking-normal">Amount</label>
+          <div class="relative mb-5 mt-2">
+            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer"></div>
+            <input type="number" id="amount" name="amount"
+                   class="mb-8 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+          </div>
+          <div class="flex items-center justify-start w-full">
+            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">
+              Submit
+            </button>
+            <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm"
+                    onclick="modalHandler()">Cancel</button>
+          </div>
+          <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
+                  onclick="modalHandler()"
+                  aria-label="close modal"
+                  role="button"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </dh-component>
+{% endblock %}
